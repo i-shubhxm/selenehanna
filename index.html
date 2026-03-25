@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Selene Hanna - Real Estate</title>
+
+<link rel="preload" as="image" href="https://res.cloudinary.com/dwlpccr2m/image/upload/v1774466303/selene_form_png_va7zjr.png" fetchpriority="high" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap" rel="stylesheet" />
+
+<style>
+  /* ── VARIABLES ── */
+  :root {
+    --cream: #faf8f5;
+    --warm-white: #ffffff;
+    --ink: #2c1f14;
+    --charcoal: #3d2b1f;
+    --gold: #b8955a;
+    --gold-light: #d9c3a3;
+    --muted: #9e8676;
+    --border: rgba(44,31,20,0.12);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--warm-white);
+    color: var(--ink);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.01em;
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    min-height: 100svh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+  }
+
+  .hero-image-col {
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* gradient fill stands in for her actual photo */
+  .hero-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    filter: saturate(0.9) contrast(1.05);
+  }
+
+  .hero-photo-overlay {
+    display: none;
+  }
+
+  .hero-text-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px 60px 80px 40px;
+    position: relative;
+  }
+
+  .hero-eyebrow {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .hero-heading {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(48px, 6vw, 82px);
+    font-weight: 600;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    margin-bottom: 12px;
+  }
+
+  .hero-heading em {
+    font-weight: 300;
+    color: var(--gold);
+  }
+
+  .hero-sub {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    margin-bottom: 48px;
+    text-transform: uppercase;
+  }
+
+  .hero-tagline {
+    font-family: 'Poppins', sans-serif;
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--charcoal);
+    max-width: 340px;
+    margin-bottom: 48px;
+    padding-left: 20px;
+    border-left: 2px solid var(--gold);
+  }
+
+  .cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--ink);
+    color: var(--cream);
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 18px 36px;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: background 0.3s, gap 0.3s;
+    width: fit-content;
+  }
+
+  .cta-button:hover {
+    background: var(--gold);
+    gap: 22px;
+  }
+
+  .cta-button svg {
+    transition: transform 0.3s;
+  }
+
+  .cta-button:hover svg {
+    transform: translateX(4px);
+  }
+
+
+
+  /* ── FORM SECTION ── */
+  .form-section {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 48px 40px;
+  }
+
+  .section-label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+    max-width: 80px;
+  }
+
+  .section-heading {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(36px, 4.5vw, 58px);
+    font-weight: 600;
+    line-height: 1.1;
+    color: var(--ink);
+    margin-bottom: 12px;
+  }
+
+  .section-heading em {
+    font-weight: 300;
+    color: var(--gold);
+  }
+
+  .section-sub {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--muted);
+    margin-bottom: 64px;
+    line-height: 1.8;
+    max-width: 480px;
+  }
+
+  /* ── FORM ── */
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border: 1px solid var(--border);
+  }
+
+  .field-block {
+    padding: 28px 32px;
+    border-bottom: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+    position: relative;
+    transition: background 0.2s;
+  }
+
+  .field-block:nth-child(even) {
+    border-right: none;
+  }
+
+  .field-block.full {
+    grid-column: 1 / -1;
+    border-right: none;
+  }
+
+  .field-block:last-child {
+    border-bottom: none;
+  }
+
+  .field-block:focus-within {
+    background: rgba(201,169,110,0.04);
+  }
+
+  .field-label {
+    display: block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+
+  .field-input,
+  .field-select,
+  .field-textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--ink);
+    padding: 0;
+    line-height: 1.4;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+
+  .field-input::placeholder,
+  .field-textarea::placeholder {
+    color: var(--gold-light);
+  }
+
+  .field-select {
+    cursor: pointer;
+    color: var(--muted);
+  }
+
+  .field-select.has-value {
+    color: var(--ink);
+    font-style: normal;
+  }
+
+  .field-select option {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    background: var(--warm-white);
+    color: var(--ink);
+  }
+
+  .select-arrow {
+    position: absolute;
+    right: 32px;
+    bottom: 34px;
+    pointer-events: none;
+    color: var(--gold);
+  }
+
+  .field-textarea {
+    resize: none;
+    min-height: 100px;
+    line-height: 1.6;
+  }
+
+  /* ── RADIO GROUP ── */
+  .radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 4px;
+  }
+
+  .radio-pill {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+  }
+
+  .radio-pill input {
+    display: none;
+  }
+
+  .pill-label {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: var(--muted);
+    padding: 6px 18px;
+    border: 1px solid var(--border);
+    transition: all 0.2s;
+    user-select: none;
+  }
+
+  .radio-pill input:checked + .pill-label {
+    background: var(--ink);
+    color: var(--cream);
+    border-color: var(--ink);
+    font-style: normal;
+  }
+
+  .radio-pill:hover .pill-label {
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
+  /* ── SUBMIT ── */
+  .submit-row {
+    grid-column: 1 / -1;
+    padding: 32px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .submit-note {
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    font-weight: 300;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    max-width: 300px;
+    line-height: 1.7;
+  }
+
+  .submit-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    background: var(--ink);
+    color: var(--cream);
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    padding: 20px 40px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s, gap 0.3s;
+  }
+
+  .submit-btn:hover {
+    background: var(--gold);
+    gap: 24px;
+  }
+
+  /* ── SUCCESS ── */
+  .success-screen {
+    display: none;
+    text-align: center;
+    padding: 80px 40px;
+    border: 1px solid var(--border);
+    animation: fadeIn 0.6s ease;
+  }
+
+  .success-screen.show {
+    display: block;
+  }
+
+  .success-icon {
+    font-size: 48px;
+    margin-bottom: 24px;
+  }
+
+  .success-screen h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 36px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 12px;
+  }
+
+  .success-screen p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 40px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .footer-name {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--ink);
+    letter-spacing: 0.02em;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 32px;
+  }
+
+  .footer-links a {
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--gold); }
+
+  .footer-copy {
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
+    font-weight: 300;
+    color: var(--gold-light);
+    letter-spacing: 0.1em;
+  }
+
+  /* ── DECORATIVE ── */
+  .corner-mark {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-color: var(--gold);
+    border-style: solid;
+    opacity: 0.4;
+  }
+  .corner-mark.tl { top: 16px; left: 16px; border-width: 1px 0 0 1px; }
+  .corner-mark.br { bottom: 16px; right: 16px; border-width: 0 1px 1px 0; }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 768px) {
+    .hero {
+      grid-template-columns: 1fr;
+      min-height: auto;
+    }
+
+    .hero-image-col {
+      height: 60svh;
+    }
+
+    .hero-photo-overlay {
+      background: linear-gradient(to bottom, transparent 50%, var(--warm-white) 95%);
+    }
+
+    .hero-text-col {
+      padding: 40px 28px 60px;
+    }
+
+    .gold-strip {
+      padding: 16px 24px;
+      gap: 20px;
+      overflow-x: auto;
+    }
+
+    .form-section {
+      padding: 60px 24px;
+    }
+
+    .form-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .field-block {
+      border-right: none !important;
+      grid-column: 1 !important;
+    }
+
+    .submit-row {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    footer {
+      padding: 32px 24px;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 24px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero-image-col">
+    <!-- Replace src with Selene's actual photo -->
+    <img
+      fetchpriority="high"
+      loading="eager"
+      decoding="async"
+      class="hero-photo"
+      src="https://res.cloudinary.com/dwlpccr2m/image/upload/v1774466303/selene_form_png_va7zjr.png"
+      alt="Selene Hanna"
+    />
+    <div class="hero-photo-overlay"></div>
+  </div>
+
+  <div class="hero-text-col">
+    <div class="corner-mark tl"></div>
+    <div class="corner-mark br"></div>
+
+    <p class="hero-eyebrow fade-in">Selene Hanna · Real Estate</p>
+
+    <h1 class="hero-heading fade-in" style="transition-delay:0.1s">
+      Let's find<br/>
+      your <em>next</em><br/>
+      home.
+    </h1>
+
+    <p class="hero-sub fade-in" style="transition-delay:0.2s">California · Residential &amp; Investment</p>
+
+    <p class="hero-tagline fade-in" style="transition-delay:0.3s">
+      Five years. Hundreds of clients. One thing I know - the right agent changes everything.
+    </p>
+
+    <a href="#form" class="cta-button fade-in" style="transition-delay:0.4s">
+      Work With Me
+      <svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1 5H15M15 5L11 1M15 5L11 9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+</section>
+</div>
+
+<!-- ═══ FORM ═══ -->
+<section class="form-section" id="form">
+
+  <p class="section-label fade-in">Let's Connect</p>
+  <h2 class="section-heading fade-in" style="transition-delay:0.1s">
+    Tell me about<br/>
+    <em>what you're looking for</em>
+  </h2>
+  <p class="section-sub fade-in" style="transition-delay:0.2s">
+    Fill this in and I'll reach out within 24 hours. No pressure - just a real conversation about where you are and where you want to be.
+  </p>
+
+  <form id="main-form" class="fade-in" style="transition-delay:0.3s" novalidate>
+    <div class="form-grid">
+
+      <!-- First Name -->
+      <div class="field-block">
+        <label class="field-label" for="first_name">First Name *</label>
+        <input class="field-input" id="first_name" name="first_name" type="text" placeholder="Your first name" required />
+      </div>
+
+      <!-- Last Name -->
+      <div class="field-block">
+        <label class="field-label" for="last_name">Last Name *</label>
+        <input class="field-input" id="last_name" name="last_name" type="text" placeholder="Your last name" required />
+      </div>
+
+      <!-- Buy / Sell / Refi -->
+      <div class="field-block full">
+        <p class="field-label">Are you looking to buy, sell, or refi? *</p>
+        <div class="radio-group">
+          <label class="radio-pill">
+            <input type="radio" name="intent" value="buy" required />
+            <span class="pill-label">Buy</span>
+          </label>
+          <label class="radio-pill">
+            <input type="radio" name="intent" value="sell" />
+            <span class="pill-label">Sell</span>
+          </label>
+          <label class="radio-pill">
+            <input type="radio" name="intent" value="refinance" />
+            <span class="pill-label">Refinance</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Areas / Cities -->
+      <div class="field-block full">
+        <label class="field-label" for="areas">What areas/cities are you looking? *</label>
+        <input class="field-input" id="areas" name="areas" type="text" placeholder="e.g. Orange County, Los Angeles, Inland Empire..." required />
+      </div>
+
+      <!-- Timeline -->
+      <div class="field-block full">
+        <p class="field-label">What's your timeline? *</p>
+        <div class="radio-group">
+          <label class="radio-pill">
+            <input type="radio" name="timeline" value="0-3" required />
+            <span class="pill-label">0-3 Months</span>
+          </label>
+          <label class="radio-pill">
+            <input type="radio" name="timeline" value="3-6" />
+            <span class="pill-label">3-6 Months</span>
+          </label>
+          <label class="radio-pill">
+            <input type="radio" name="timeline" value="6-12" />
+            <span class="pill-label">6-12 Months</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Pre-approved -->
+      <div class="field-block full">
+        <p class="field-label">Are you pre-approved? *</p>
+        <div class="radio-group">
+          <label class="radio-pill">
+            <input type="radio" name="preapproved" value="yes" required />
+            <span class="pill-label">Yes</span>
+          </label>
+          <label class="radio-pill">
+            <input type="radio" name="preapproved" value="no" />
+            <span class="pill-label">No</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Phone -->
+      <div class="field-block">
+        <label class="field-label" for="phone">Phone Number *</label>
+        <input class="field-input" id="phone" name="phone" type="tel" placeholder="(___) ___-____" required />
+      </div>
+
+      <!-- Email -->
+      <div class="field-block">
+        <label class="field-label" for="email">Email *</label>
+        <input class="field-input" id="email" name="email" type="email" placeholder="you@example.com" required />
+      </div>
+
+      <!-- Extra notes -->
+      <div class="field-block full">
+        <label class="field-label" for="message">What else would you like me to know?</label>
+        <textarea class="field-textarea" id="message" name="message" placeholder="Share anything that would help me understand what you need..." rows="4"></textarea>
+      </div>
+
+      <!-- Submit -->
+      <div class="submit-row">
+        <p class="submit-note">
+          Your information is kept private. I'll reach out personally within 24 hours.
+        </p>
+        <button type="submit" class="submit-btn">
+          Send My Info
+          <svg width="16" height="10" viewBox="0 0 16 10" fill="none"><path d="M1 5H15M15 5L11 1M15 5L11 9" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+
+    </div>
+  </form>
+
+  <!-- Success -->
+  <div class="success-screen" id="success">
+    <div class="success-icon">✦</div>
+    <h3>Thank you.</h3>
+    <p>I'll be in touch within 24 hours.<br/>Looking forward to working with you.</p>
+  </div>
+
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <span class="footer-name">Selene Hanna</span>
+  <div class="footer-links">
+    <a href="https://www.instagram.com/selene_hanna/" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.linkedin.com/in/selene-hanna/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="mailto:selene@altfn.com">selene@altfn.com</a>
+  </div>
+  <span class="footer-copy">© 2026 · California Real Estate</span>
+</footer>
+
+<script>
+  // Intersection observer for fade-ins
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) e.target.classList.add('visible');
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+  // Select styling
+  document.querySelectorAll('.field-select').forEach(sel => {
+    sel.addEventListener('change', () => {
+      sel.classList.toggle('has-value', sel.value !== '');
+    });
+  });
+
+  // Form submit
+  document.getElementById('main-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    this.style.display = 'none';
+    document.getElementById('success').classList.add('show');
+    document.getElementById('success').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+</script>
+</body>
+</html>
